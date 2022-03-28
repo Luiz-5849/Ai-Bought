@@ -1,0 +1,22 @@
+.logo {
+  font-size: 22px;
+  letter-spacing: 1px;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+
+  &__img {
+    margin-right: 5px;
+    height: 35px;
+  }
+  &__text {
+    &-alura {
+      color: $red;
+    }
+    &-geek {
+      color: $black;
+    }
+  }
+
+}

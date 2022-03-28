@@ -1,0 +1,85 @@
+.main {
+  background-color: $light-grey;
+
+  &__sections {
+    width: fit-content;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); 
+
+    padding-bottom: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .section {
+    width: fit-content;
+    margin-top: 40px;
+    margin-bottom: 10px;
+
+    &__title {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__name {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 15px;
+    }
+
+    &__button {
+      background: none;
+      border: none;
+      color: $red;
+      font-size: 15.5px;
+      position: relative;
+
+      &::after{
+        content: '';
+        background-image: url(../../img/setinha.svg);
+        background-repeat: no-repeat;
+        background-size: 13px;
+        height: 15px;
+        width: 15px;
+        left: 71px;
+        top: 27px;
+        position: absolute;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    
+    &__products {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 25px;
+      
+    }
+
+    &__product {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .product {
+        &__link {
+          text-decoration: none;
+          color: $red;
+          font-family: monospace;
+          font-size: 16px;
+        }
+
+        &__img {
+          height: 140px;
+        }
+      }
+    }
+  }
+}

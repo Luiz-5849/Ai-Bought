@@ -1,0 +1,53 @@
+.header {
+  padding: 0 115px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 115px;
+  background-color: $white;
+
+  &__left {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    gap: 100px;
+  }
+
+  // &__logo {
+  //   @extend %logo-config;
+  // }
+
+  &__search {
+    position: relative;
+
+    &-input {
+      height: 40px;
+      width: 393px;
+      border: none;
+      border-radius: 20px;
+      background-color: $light-grey;
+      padding: 8px 16px;
+
+    }
+
+    &-img {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 15px;
+    }
+  }
+
+  &__button {
+    width: 182px;
+    height: 51px;
+    color: $red;
+    background-color: $white;
+    border: 1px solid $red;
+    font-weight: 700;
+
+    &:hover {
+      background-color: #fad4d4;
+    }
+  }
+}
