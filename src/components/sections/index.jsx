@@ -4,64 +4,64 @@ import Banner from "../banner"
 import Card from "../card"
 
 export default function Sections () {
-  const [listaProdutos, setListaProdutos] = useState()
+  const [productList, setProductList] = useState([{}])
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     apiB
       .get('/')
       .then(response => {
-        setListaProdutos(response.data)
+        setProductList(response.data)
       })
-      .catch(err => console.error(err));
+      .catch(err => console.error(err));    
   }, [])
 
   useEffect(() => {
     apiE
       .get('/')
       .then(response => {
-        const tratamento = response.data.map(produto => (
+        const tratamento = response.data.map(product => (
           {
-            id: produto.id,
-            nome: produto.name,
+            id: product.id,
+            nome: product.name,
             categoria: 'Diversos',
-            descricao: produto.description,
+            descricao: product.description,
             detalhes: {
-              adjetivo: produto.details.adjective,
-              material: produto.details.material
+              adjetivo: product.details.adjective,
+              material: product.details.material
             },
-            preco: produto.price,
-            temDisconto: produto.hasDiscount,
-            valorDesconto: produto.discountValue,
-            galeriaImagens: produto.gallery,
-            imagem: produto.gallery[0]
+            preco: product.price,
+            temDisconto: product.hasDiscount,
+            valorDesconto: product.discountValue,
+            galeriaImagens: product.gallery,
+            imagem: product.gallery[0]
           }
           )) 
-        setListaProdutos(valorAntigo => [...valorAntigo, ...tratamento])
+        setProductList(valorAntigo => [...valorAntigo, ...tratamento])
       })
       .catch(err => console.error(err));
   }, [])
   
   useEffect(() => {
-    if (listaProdutos) {
-      if(index == listaProdutos.length - 1) {
-        setIndex(state => state = 0)
-      }
+  
+    if(index === productList ? productList.length - 1 : null) {
+      setIndex(state => state = 0)
     }
+    
     setTimeout(() => {
       setIndex(state => state + 1);
     }, 8000)
   }, [index])
 
-  function Render () {
-    const categories = [...new Set(listaProdutos.map(produto => produto.categoria))]
+  const categories = [...new Set(productList.map(produto => produto.categoria))]
 
-    return (
-      <div className="main">
-        <Banner promotion={listaProdutos[index]} />
-        <div className="main__sections">
+  return (
+    <div className="main">
+      <Banner promotion={productList[index]} />
+      <div className="main__sections">
         {categories.map((categoria, index) => {
-          const produtosPorCategoria = listaProdutos.filter(produto => produto.categoria === categoria)
+          const produtosPorCategoria = productList.filter(produto => produto.categoria === categoria)
+
           let sectionProducts = [];
           for (let i = 0; i < produtosPorCategoria.length && i < 7; i++) {
             sectionProducts.push(produtosPorCategoria[i])
@@ -77,20 +77,15 @@ export default function Sections () {
                   sectionProducts.map((produto, index) => {
                     return (
                       <Card nome={produto.nome} imagem={produto.imagem} preco={produto.preco} key={index} />
-                    )
+                      )
                   })
                 }
               </div>
             </section>
           )
         })}
-        </div>
       </div>
-    )
-  }
-  
-  return (
-    <div>{listaProdutos ? Render() : ''}</div>
+    </div>
   )
+ 
 }   
-
