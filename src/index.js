@@ -1,21 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css';
-import Home from './pages/Home.js';
-import Produto from './pages/Produto.js'
+import App from './pages/App';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<Home />} exact />
-      <Route path='/produto' element={<Produto />}>
-        <Route path=':nome' element={<Produto />} />
-      </Route>
-    </Routes>
-  </BrowserRouter>,
+  <App /> ,
   document.getElementById('root')
 );
-
-
-// reportWebVitals();
