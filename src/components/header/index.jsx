@@ -7,8 +7,8 @@ export default function Header () {
       <div className="header__left">
         <Logo />
         <div className="header__search">
-            <input type="search" className="header__search-input" placeholder="O que deseja encontrar?" />
-            <img src={lupa} alt="lupa" className="header__search-img" />
+          <input type="search" className="header__search-input" placeholder="O que deseja encontrar?" />
+          <img src={lupa} alt="lupa" className="header__search-img" />
         </div>
       </div>
       <button className="header__button">Login</button>
