@@ -20,6 +20,7 @@
 .main .section__title {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .main .section__name {
   font-size: 32px;
@@ -40,8 +41,8 @@
   background-size: 13px;
   height: 15px;
   width: 15px;
-  left: 71px;
-  top: 27px;
+  left: 68px;
+  top: 5px;
   position: absolute;
 }
 .main .section__button:hover {
@@ -78,7 +79,6 @@
 }
 .header__left {
   display: flex;
-  gap: 100px;
   align-items: center;
   gap: 100px;
 }
@@ -87,7 +87,7 @@
 }
 .header__search-input {
   height: 40px;
-  width: 393px;
+  width: 650px;
   border: none;
   border-radius: 20px;
   background-color: #e7e7e7;
@@ -139,6 +139,7 @@
   text-align: center;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .logo__img {
   margin-right: 5px;
@@ -224,6 +225,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  cursor: pointer;
 }
 .main__banner .banner__promotion .promotion__img-moldure {
   position: absolute;
@@ -255,6 +257,78 @@
   gap: 10px;
   font-size: 20px;
   font-weight: 700;
+}
+
+.main__product {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.main__product .product__txt {
+  position: relative;
+  left: 30px;
+  top: 100px;
+}
+.main__product .product__name {
+  font-size: 30px;
+}
+.main__product .product__button {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 50px;
+  width: 400px;
+  height: 51px;
+  color: #db0808;
+  background-color: azure;
+  border: 1px solid #db0808;
+  font-weight: 700;
+  font-size: 16px;
+}
+.main__product .product__button:hover {
+  background-color: #fad4d4;
+}
+
+.main__products {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 35px;
+  width: fit-content;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.main__products .products__category {
+  font-size: 40px;
+  font-weight: 400;
+}
+.main__products .product {
+  display: flex;
+}
+.main__products .product__img {
+  width: 650px;
+  border-radius: 10px;
+}
+.main__products .product__txt {
+  width: fit-content;
+  margin-left: 50px;
+  white-space: nowrap;
+  font-size: 27.5px;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+}
+.main__products .product__link {
+  margin-top: 30px;
+  color: #db0808;
+  text-decoration: none;
+  border: 1px solid #db0808;
+  padding: 5px 15px;
+  width: fit-content;
+  border-radius: 5px;
+}
+.main__products .product__link:hover {
+  background-color: #fad4d4;
 }
 
 body {

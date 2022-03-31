@@ -93,10 +93,10 @@
       &__promotion {
         height: 100%;
         width: 22%;
-        // position: relative;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+        cursor: pointer;
         
         .promotion {
           &__img {

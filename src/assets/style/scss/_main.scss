@@ -23,6 +23,7 @@
     &__title {
       display: flex;
       justify-content: space-between;
+      align-items: center;
     }
 
     &__name {
@@ -45,8 +46,8 @@
         background-size: 13px;
         height: 15px;
         width: 15px;
-        left: 71px;
-        top: 27px;
+        left: 68px;
+        top: 5px;
         position: absolute;
       }
 
