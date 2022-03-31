@@ -1,70 +1,17 @@
-# Getting Started with Create React App
+Utilização do projeto:
+1 - Após a instalação, rodar no terminal o comando 'npm install' para a instalação de todos os modulos necessários para o projeto;
+2 - Após a instalação dos modulos, rodar o comando 'npm start' no terminal.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Construção do projeto
+1 - Nesse projeto, muitas coisas eu estava fazendo pela primeira vez, então comecei estudando como eu faria para consumir os dados das api's disponibilizadas
+2 - Construí a pagina principal do site, o Home
+3 - Para a estilização da pagina Home, bem como das demais páginas, resolvi utilizar o scss e importar o arquivo de estilo direto no escopo global do projeto. Eu utilizei a funcionalidade do sass de compilar todo codigo escrito por mim de scss em css, como pré-configurado no package.json no scripts.wsass. Portanto, todo o codigo de estilização escrito por mim, encontra-se na pasta './src/assets/style/scss/'.
+4 - Para a construção das demais paginas, eu tentei construir uma api onde estariam disponibilizados e organizados os dados das api's dos provedores. Para isso eu iria utilizar a lib express, mas toda vez que eu importava essa lib, varios erros relacionados à "webpack" e a "polyfills' eram gerados, e eu não consegui solucioná-los. Portanto optei por criar uma função no escopo global do projeto, que consumia os dados das api's dos provedores e os organizava em um novo array
+5 - Construi a pagina que carrega um único produto
+6 - Construi a pagina que carrega todos os produtos de sua determinada categoria
 
-## Available Scripts
+Banco de dados
+1 - Apenas comecei a etapa da construção do banco de dados e a utilização dele pelo projeto, como pode ser visto nos arquivos './bd.db' e './src/datasource/cruds.js', mas infelizmente não pude finalizá-los devido ao aproximamento do prazo final de entrega do projeto
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Comentários finais
+1 - Agradeço a oportunidade de poder ter participado desse processo. Gostaria de ter tido mais tempo para que eu pudesse entregar tudo o que foi pedido. Percebo que ainda tenho muito o que aprender, e que esse teste me serviu de muito aprendizado. Espero que gostem daquilo que eu fiz. 
