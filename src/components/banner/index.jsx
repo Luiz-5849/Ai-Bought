@@ -3,7 +3,11 @@ import mulher1 from '../../assets/img/mulher1.png'
 import mulher2 from '../../assets/img/mulher2.png'
 import mulher3 from '../../assets/img/mulher3.png'
 
-export default function Banner ({ promotion }) {
+export default function Banner ({ promotion = [] }) {
+  function redirect () {
+    window.location.href = `/produto/${promotion.id}`
+  }
+  
   return (
     <div className="main__banner">
       <div className='banner__text'>
@@ -15,7 +19,7 @@ export default function Banner ({ promotion }) {
         <img src={mulher2} className="women__img women_2" />
         <img src={mulher3} className="women__img women_3" />
       </div>
-      <div className="banner__promotion">
+      <div className="banner__promotion" onClick={redirect}>
         <div className="promotion__imgs">
           <img src={moldura} alt="moldura" className="promotion__img-moldure" />
           <img className="promotion__img-product" src={promotion.imagem} />

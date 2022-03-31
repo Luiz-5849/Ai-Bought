@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
+
 import Banner from "../banner"
 import Card from "../card"
 
@@ -32,7 +34,7 @@ export default function Sections ({productList = []}) {
             <section className="section" key={index}>
               <div className="section__title">
                 <h2 className="section__name">{category}</h2>
-                <button className="section__button">Ver tudo</button>
+                <Link className="section__button" to={`/produtos/${category}`} >Ver tudo</Link>
               </div>
               <div className="section__products">
                 {sectionProducts.map((product, index) => {

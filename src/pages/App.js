@@ -3,11 +3,12 @@ import { apiB, apiE } from '../datasource/index.js'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './Home.js';
 import Produto from './Produto.js'
+import Produtos from './Produtos.js';
 
 function App () {
   const [productList, setProductList] = useState([]);
 
-  async function getData (apiB, apiE) {
+  async function getData (apiB, apiE, setFunc) {
     const { data } = await apiB.get('/');
     const response = await apiE.get('/');
 
@@ -31,11 +32,11 @@ function App () {
       ...product,
       id: index + 1
     }));
-    setProductList(products);
+    setFunc(products);
   }
 
   useEffect(() => {
-    getData(apiB, apiE);
+    getData(apiB, apiE, setProductList);
   }, []);
 
 
@@ -43,7 +44,8 @@ function App () {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home productList={productList} />} exact />
-        <Route path='/produto/:id' element={<Produto productList={productList} />} />
+        <Route path='/produto/:id' element={<Produto getData={getData} dataSource={{apiB, apiE}} />} />
+        <Route path='/produtos/:categoria' element={<Produtos getData={getData} dataSource={{apiB, apiE}} />} />
       </Routes>
     </BrowserRouter>
   )
