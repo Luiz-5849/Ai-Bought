@@ -1,19 +1,26 @@
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 import '../assets/style/css/style.css';
 import Header from '../components/header/index.jsx'
 import Footer from '../components/footer';
 import Product from '../components/product';
 
-export default function Produto () {
+export default function Produto ({dataSource, getData}) {
+  const [productList, setProductList] = useState([])
+  const params = useParams();
+  const id = Number(params.id)
 
-  let params = useParams();
-  console.log(params)
+  useEffect(() => {
+    getData(dataSource.apiB, dataSource.apiE, setProductList);
+  }, [])
+
+  const product = productList.find(product => product.id === id)
+  
   return (
     <div>
       <Header />
-      <p>{params.nome}</p>
-      <Product />
+      <Product product={product} />
       <Footer />
     </div>
   );
