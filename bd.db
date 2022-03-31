@@ -1,0 +1,48 @@
+create database `ai-bought`;
+use `ai-bought`;
+
+create table clientes (
+cod_cliente int not null primary key auto_increment,
+nome varchar(50) not null,
+cpf char(11) not null,
+data_nasc date not null
+);
+
+create table contatos_clientes (
+cod_contato int not null primary key auto_increment,
+cod_cliente int not null,
+telefone_fixo char(10),
+telefone_cel char(11) not null,
+email varchar(60) not null,
+foreign key (cod_cliente) references clientes (cod_cliente)
+);
+
+create table carrinho (
+cod_carrinho int not null primary key auto_increment,
+cod_cliente int not null,
+foreign key (cod_cliente) references clientes (cod_cliente)
+);
+
+create table carrinho_produtos (
+cod_registro int not null primary key auto_increment,
+cod_carrinho int not null,
+cod_produto int not null,	
+foreign key (cod_carrinho) references carrinho (cod_carrinho)
+);
+
+create table compras (
+cod_compra int not null primary key auto_increment,
+cod_cliente int not null,
+valor_total decimal(00000.00) not null,
+quantidade_produtos int not null,
+foreign key (cod_cliente) references clientes (cod_cliente)
+);
+
+create table produtos_comprados (
+cod_registro int not null primary key auto_increment,
+cod_compra int not null,
+nome_produto varchar(50) not null,
+preco_produto decimal(0000.00) not null,
+foreign key (cod_compra) references compras (cod_compra)
+);
+
